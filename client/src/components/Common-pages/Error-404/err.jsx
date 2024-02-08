@@ -1,3 +1,4 @@
+import './err.css'
 
 const err = () => {
   return (
