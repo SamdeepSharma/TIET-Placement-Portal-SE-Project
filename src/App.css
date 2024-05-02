@@ -2,3 +2,31 @@
   margin: 0px;
   padding: 0px;
 }
+
+body{
+  /* background-image: url('../public/tiet3.jpg'); */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* Style the thumb (dragging handle) of the scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #ffc6b5; /* Light blue color for the thumb */
+  border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+/* Hide the scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Invisible track */
+  background-color: #b3c7d1; /* Light blue color for the thumb */
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
