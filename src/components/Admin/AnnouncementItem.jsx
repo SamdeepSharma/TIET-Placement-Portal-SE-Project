@@ -9,6 +9,7 @@ const AnnouncementItem = (props) => {
                     <div className="card-body">
                          <h5 className="card-title">{announcement.title}</h5>
                          <p className="card-text">{announcement.description}</p>
+                         <em className="mx-1 small">posted: {announcement.date}</em>
                          <i className="fa-solid fa-trash mx-2 cursor-pointer" onClick={()=>{ delAnnouncement(announcement) }}></i>
                          <i className="fa-solid fa-pen-to-square mx-2 cursor-pointer" onClick={() => { updateAnnouncement(announcement) }}></i>
                     </div>

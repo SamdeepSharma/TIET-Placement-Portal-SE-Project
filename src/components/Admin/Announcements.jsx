@@ -38,12 +38,10 @@ const Announcements = () => {
 
   const delAnnouncement = (currentAnn) =>{
     setCurrent({did: currentAnn._id})
-    console.log(currentAnn._id)
     openRef.current.click()
 }
 
 const handleDelete = () => {
-  console.log(current)
   deleteAnnouncement(current.did)
   refdel.current.click()
   toast('🗑️ Announcement Deleted!', {
@@ -239,7 +237,7 @@ const handleDelete = () => {
       <div className="d-flex justify-content-center align-items-center gap-3">
         <h2 className="my-4">All Announcements</h2> <i className="fa-solid fa-circle-plus fa-2xl cursor-pointer" onClick={adddAnnouncement}></i> </div>
       {announcements.length === 0 && <h6 className="py-2">No announcements to display!</h6>}
-      <div className="row g-1 overflow-auto m-2" style={{maxHeight: '70vh', minHeight: '60vh'}}>
+      <div className="row g-1 overflow-auto m-2 d-flex justify-content-center" style={{maxHeight: '70vh', minHeight: '60vh'}}>
         {announcements.map((announcement) => {
           return <AnnouncementItem key={announcement._id} updateAnnouncement={updateAnnouncement} delAnnouncement={delAnnouncement} announcement={announcement} />
         })}

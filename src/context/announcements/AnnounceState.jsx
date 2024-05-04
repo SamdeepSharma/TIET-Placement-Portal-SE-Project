@@ -6,9 +6,10 @@ import { useState } from "react";
 
 const AnnouncementState = (props) => {
     const host = 'http://localhost:5000';
-    const initialAnnouncements = []
+    const initially = []
 
-    const [announcements, setAnnouncements] = useState(initialAnnouncements)
+    const [announcements, setAnnouncements] = useState(initially)
+    const [students, setStudents] = useState(initially)
 
     //get all announcements
     const fetchAnnouncements = async () => {
@@ -23,6 +24,21 @@ const AnnouncementState = (props) => {
         const json = await response.json()
         console.log(json)
         setAnnouncements(json)
+    }
+
+    //get all students
+    const fetchStudents = async () => {
+        //API call
+        const response = await fetch(`${host}/api/auth/getstudents`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                'auth-token': localStorage.getItem('token')
+            },
+        });
+        const stu = await response.json()
+        console.log(stu)
+        setStudents(stu)
     }
 
     //Add Announcement
@@ -84,7 +100,7 @@ const AnnouncementState = (props) => {
 
     return (
 
-        <AnnounceContext.Provider value={{ announcements, addAnnouncement, deleteAnnouncement, editAnnouncement, fetchAnnouncements }}>
+        <AnnounceContext.Provider value={{ announcements, addAnnouncement, deleteAnnouncement, editAnnouncement, fetchAnnouncements, students, fetchStudents }}>
             {props.children}
         </AnnounceContext.Provider>
 

@@ -31,3 +31,8 @@ body{
 .cursor-pointer {
   cursor: pointer;
 }
+
+.user{
+  height: 50px;
+  width: 50px;
+}
