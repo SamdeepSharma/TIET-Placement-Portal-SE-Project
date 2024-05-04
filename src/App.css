@@ -9,6 +9,7 @@ body{
   background-position: center center;
   background-size: cover;
   backdrop-filter: blur(10px);
+  background-color: #e6f3ff;
 }
 
 ::-webkit-scrollbar {
@@ -17,14 +18,14 @@ body{
 
 /* Style the thumb (dragging handle) of the scrollbar */
 ::-webkit-scrollbar-thumb {
-  background-color: #ffc6b5; /* Light blue color for the thumb */
+  background-color: #e6f3ff; /* Light blue color for the thumb */
   border-radius: 5px; /* Rounded corners for the thumb */
 }
 
 /* Hide the scrollbar track */
 ::-webkit-scrollbar-track {
   background: transparent; /* Invisible track */
-  background-color: #b3c7d1; /* Light blue color for the thumb */
+  background-color: #e6f3ff; /* Light blue color for the thumb */
 }
 
 .cursor-pointer {

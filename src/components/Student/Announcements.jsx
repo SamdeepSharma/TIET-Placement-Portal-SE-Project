@@ -30,7 +30,6 @@ const Announcements = () => {
       <div className="row g-1">
         { announcements.map((announcement) => {
           return <AnnouncementItem key={announcement._id} announcement={announcement} />
-              // <AnnouncementItem key={announcement._id} announcement={announcement} />
         })}
       </div>
     </div>
