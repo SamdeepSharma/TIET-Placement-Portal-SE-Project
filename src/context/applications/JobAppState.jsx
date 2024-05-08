@@ -39,73 +39,89 @@ const JobAppState = (props) => {
         setApplications(allapps)
     }
 
-    //Add Company
-    // const addCompany = async (title, description) => {
-    //     //API call
-    //     const response = await fetch(`${host}/api/companies/addcompanies`, {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             "auth-token": localStorage.getItem('token')
-    //         },
-    //         body: JSON.stringify({title, description}),
-    //     });
-    //     const company = await response.json()
-    //     //frontend logic
-    //     setCompanies(companies.concat(company))
-    // }
+    //Delete Company
+    const submitApp = async (id) => {
+        //API call
+        const response = await fetch(`${host}/api/applications/submitapplications/${id}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token')
+            },
+        });
+        const application = await response.json()
+        //frontend logic
+        setCompanies(applications.concat(application))
+    }
 
-        //get all companies
-        const fetchCompanies = async () => {
-            //API call
-            const response = await fetch(`${host}/api/jobs/fetchjobs`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    'auth-token': localStorage.getItem('token')
-                },
-            });
-            const json = await response.json()
-            console.log(json)
-            setCompanies(json)
-        }
-    
-        //Add Company
-        const addCompany = async (type, companyName, closingDate, requiredGPA) => {
-            //API call
-            const response = await fetch(`${host}/api/jobs/addjobs`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "auth-token": localStorage.getItem('token')
-                },
-                body: JSON.stringify({type, companyName, closingDate, requiredGPA}),
-            });
-            const company = await response.json()
-            //frontend logic
-            setCompanies(companies.concat(company))
-        }
-    
-        //Delete Company
-        const deleteCompany = async(id) => {
-            //API call
-            const response = await fetch(`${host}/api/jobs/deletejobs/${id}`, {
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json",
-                    "auth-token": localStorage.getItem('token')
-                },
-            });
-            //frontend logic
-            const newCompanies = companies.filter((company) => {
-                return company._id != id
-            })
-            setCompanies(newCompanies)
-        }
+    //get all companies
+    const fetchCompanies = async () => {
+        //API call
+        const response = await fetch(`${host}/api/jobs/fetchjobs`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                'auth-token': localStorage.getItem('token')
+            },
+        });
+        const json = await response.json()
+        console.log(json)
+        setCompanies(json)
+    }
+
+    //get all companies user is eligible for
+    const fetcheCompanies = async () => {
+        //API call
+        const response = await fetch(`${host}/api/jobs/fetchejobs`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                'auth-token': localStorage.getItem('token')
+            },
+        });
+        const json = await response.json()
+        console.log(json)
+        setCompanies(json)
+    }
+
+    //Add Company
+    const addCompany = async (type, companyName, requiredGPA, closingDate, batch) => {
+        //API call
+        const response = await fetch(`${host}/api/jobs/addjobs`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token')
+            },
+            body: JSON.stringify({ type, companyName, requiredGPA, closingDate, batch }),
+        });
+        console.log(type, companyName, closingDate, requiredGPA, batch)
+        const company = await response.json()
+        console.log(company)
+        //frontend logic
+        setCompanies(companies.concat(company))
+    }
+
+    //Delete Company
+    const deleteCompany = async (id) => {
+        //API call
+        const response = await fetch(`${host}/api/jobs/deletejobs/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token')
+            },
+        });
+        //frontend logic
+        const newCompanies = companies.filter((company) => {
+            return company._id != id
+        })
+        setCompanies(newCompanies)
+    }
 
     return (
 
-        <JobAppContext.Provider value={{ applications, fetchAllApps, fetchApps, companies, fetchCompanies, addCompany, deleteCompany }}>
+        <JobAppContext.Provider value={{ applications, fetchAllApps, fetchApps, companies, fetchCompanies, fetcheCompanies, addCompany, deleteCompany, submitApp }}>
             {props.children}
         </JobAppContext.Provider>
 
