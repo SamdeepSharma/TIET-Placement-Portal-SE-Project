@@ -11,7 +11,7 @@ const JobAppState = (props) => {
     const [applications, setApplications] = useState(initially)
     const [companies, setCompanies] = useState(initially)
     const [student, setStudent] = useState(initially)
-    const [checkit, setCheckit] = useState({})
+    const [checkit, setCheckit] = useState(initially)
 
     //get applications
     const fetchApps = async () => {
@@ -68,7 +68,7 @@ const JobAppState = (props) => {
         });
         const check = await response.json()
         //frontend logic
-        setCheckit(check)
+        setCheckit({id, check})
     }
 
     //get all companies

@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 const Companies = () => {
   const navigate = useNavigate();
   const context = useContext(JobAppContext)
-  const { companies, fetchCompanies, submitApp, student, fetchStudent } = context;
+  const { companies, fetchCompanies, submitApp, student, fetchStudent} = context;
   const [filterComp, setfilterComp] = useState([])
   useEffect(() => {
     if (localStorage.getItem('token')) {

@@ -1,21 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 
-import { useContext, useEffect } from "react";
-import JobAppContext from "../../context/applications/JobAppContext";
 
 const CompanyItem = (props) => {
      const { company, addApp } = props;
-     const context = useContext(JobAppContext)
-     const { checkit, checkApp } = context;
-
-     useEffect(() => {
-          checkApp(company._id)
-     }, [])
-
 
      return (
-          <div className="w-50">
+          <div className="w-50 m-1">
                <div className="card w-100 mb-3">
                     <div className="d-flex justify-align-align-content-xl-between">
                          <div className="card-body d-flex">
@@ -29,7 +20,7 @@ const CompanyItem = (props) => {
                          <div className="card-body">
                               <h5 className="card-title">Batch: {company.batch}</h5>
                               <p className="card-text">Required GPA: {company.requiredGPA}</p>
-                              <button className="btn btn-primary" disabled={!checkit.success} onClick={() => { addApp(company) }}>{checkit.success ? <span>Apply</span> : <span>Applied</span>}</button>
+                              <button className="btn btn-primary" onClick={() => { addApp(company) }}>Apply</button>
                          </div>
                     </div>
                </div>

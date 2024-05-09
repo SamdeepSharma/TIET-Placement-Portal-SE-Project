@@ -22,9 +22,9 @@ function App() {
      const navigate = useNavigate();
      useEffect(() => {
           if (localStorage.getItem('token') && localStorage.getItem('user') === 'student') {
-              navigate('/student/announcements');
+              navigate('/');
           } else if (localStorage.getItem('token') && localStorage.getItem('user') === 'admin') {
-              navigate('/admin/announcements');
+              navigate('/');
           }
       }, [localStorage.getItem('token')]);
 
@@ -33,7 +33,7 @@ function App() {
                <AnnounceState>
                     <JobAppState>
                          <Navbar />
-                         <div className='container'>
+                         <div className=''>
                               <Routes>
                                    <Route path='/' element={<Home />} />
                                    <Route path='/login' element={<Login />} />

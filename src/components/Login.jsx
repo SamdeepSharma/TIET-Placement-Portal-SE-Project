@@ -49,7 +49,7 @@ const Login = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "dark",
+        theme: "colored",
       });
       navigate("/")
     }
@@ -62,16 +62,26 @@ const Login = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "dark",
+        theme: "colored",
       });
     }
-  } catch (error) {
-    console.log(error)
+  }  catch(error) {
+    toast.error('🚨 Invalid Credentials!', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+    console.error(error);
   }
 }
 
 return (
-  <div>
+  <div className="container">
     <h2 className="my-4">Login to continue to TIET-PMS</h2>
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-3">

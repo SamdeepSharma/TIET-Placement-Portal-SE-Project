@@ -1,0 +1,36 @@
+.carousel-container{
+    margin: 2vw auto;
+    background: transparent;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 50vw;
+    height: 30vw;
+}
+.carousel-Item{
+    min-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 1s cubic-bezier(0.39,0.575,0.565,1);
+}
+.Alumnicard{
+    color: black;
+    border: 2px solid white;
+    width: 23vw;
+    height: 27vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    border-radius: 2vw;
+}
+
+@media screen and (max-width: 1200px) {
+    .Alumnicard h2,h3{
+        font-size: 20px;
+    }
+  }

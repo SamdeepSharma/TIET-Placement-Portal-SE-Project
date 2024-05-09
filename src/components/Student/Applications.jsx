@@ -21,7 +21,7 @@ const Applications = () => {
   }, [])
 
   return (
-    <div className="py-2">
+    <div className="container py-2">
       <div className="d-flex justify-content-center align-items-center">
       <h2 className="my-4">All Applications</h2>
       </div>

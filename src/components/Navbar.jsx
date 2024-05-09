@@ -16,7 +16,7 @@ const Navbar = () => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "dark",
+      theme: "colored",
     });
     navigate('/login')
   }
@@ -73,7 +73,7 @@ const Navbar = () => {
               }
               <li className="nav-item dropdown">
                 <a className={`nav-link dropdown-toggle ${location.pathname == "/about" || location.pathname == "/contact-us" ? "active" : ""}`} href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Reach us out
+                  Reach out to us
                 </a>
                 <ul className="dropdown-menu">
                   <li><Link className={`dropdown-item ${location.pathname === "/about" ? "active" : ""}`} to="/about">About Us</Link></li>
