@@ -15,7 +15,7 @@ const Login = () => {
     }
   }, [])
 
-  const host = 'http://localhost:5000';
+  const host = 'https://tiet-pms-backend.vercel.app';
 
   const [showPassword, setShowPassword] = useState(false);
 
