@@ -10,6 +10,8 @@ const JobAppState = (props) => {
 
     const [applications, setApplications] = useState(initially)
     const [companies, setCompanies] = useState(initially)
+    const [student, setStudent] = useState(initially)
+    const [checkit, setCheckit] = useState({})
 
     //get applications
     const fetchApps = async () => {
@@ -39,7 +41,7 @@ const JobAppState = (props) => {
         setApplications(allapps)
     }
 
-    //Delete Company
+    //Submit application
     const submitApp = async (id) => {
         //API call
         const response = await fetch(`${host}/api/applications/submitapplications/${id}`, {
@@ -52,6 +54,21 @@ const JobAppState = (props) => {
         const application = await response.json()
         //frontend logic
         setCompanies(applications.concat(application))
+    }
+
+    //Check if already applied
+    const checkApp = async (id) => {
+        //API call
+        const response = await fetch(`${host}/api/applications/checkapplications/${id}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "auth-token": localStorage.getItem('token')
+            },
+        });
+        const check = await response.json()
+        //frontend logic
+        setCheckit(check)
     }
 
     //get all companies
@@ -69,19 +86,19 @@ const JobAppState = (props) => {
         setCompanies(json)
     }
 
-    //get all companies user is eligible for
-    const fetcheCompanies = async () => {
+    //get student data
+    const fetchStudent = async () => {
         //API call
-        const response = await fetch(`${host}/api/jobs/fetchejobs`, {
+        const response = await fetch(`${host}/api/auth/getdata`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
                 'auth-token': localStorage.getItem('token')
             },
         });
-        const json = await response.json()
-        console.log(json)
-        setCompanies(json)
+        const stu = await response.json()
+        console.log(stu)
+        setStudent(stu)
     }
 
     //Add Company
@@ -121,7 +138,7 @@ const JobAppState = (props) => {
 
     return (
 
-        <JobAppContext.Provider value={{ applications, fetchAllApps, fetchApps, companies, fetchCompanies, fetcheCompanies, addCompany, deleteCompany, submitApp }}>
+        <JobAppContext.Provider value={{ applications, fetchAllApps, fetchApps, student, fetchStudent, checkit, checkApp, companies, fetchCompanies, addCompany, deleteCompany, submitApp }}>
             {props.children}
         </JobAppContext.Provider>
 

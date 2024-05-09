@@ -11,10 +11,17 @@ import { toast } from 'react-toastify';
 const Companies = () => {
   const navigate = useNavigate();
   const context = useContext(JobAppContext)
-  const { companies, fetcheCompanies, submitApp } = context;
+  const { companies, fetchCompanies, submitApp, student, fetchStudent } = context;
+  const [filterComp, setfilterComp] = useState([])
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      fetcheCompanies()
+      fetchCompanies()
+      fetchStudent()
+      const filtered = companies.filter(company => {
+        if(company.requiredGPA <= parseFloat(student.gpa) && company.batch == parseInt(student.year) && new Date(company.closingDate) >= Date.now())
+          return company
+    });
+      setfilterComp(filtered)
     }
     else {
       navigate('/login')
@@ -57,7 +64,7 @@ const handleApp = () => {
             </div>
             <div className="d-flex justify-content-center my-3">
               <button type="button" className="btn btn-secondary mx-2" data-bs-dismiss="modal" ref={refadd}>No</button>
-              <button type="button" className="btn btn-primary mx-2" onClick={handleApp}>Yes, Apply</button>
+              <button type="button" className="btn btn-primary mx-2" onClick={handleApp} >Yes, Apply</button>
             </div>
           </div>
         </div>
@@ -69,7 +76,7 @@ const handleApp = () => {
         <h2 className="d-flex justify-content-center my-4">Eligible Companies</h2>
       {companies.length === 0 && <h6 className="py-2">No companies hiring right now! Visit again after some time.</h6>}
       <div className="row g-1 d-flex justify-content-center overflow-auto m-2" style={{maxHeight: '70vh', minHeight: '60vh'}}>
-        {companies.map((company) => {
+        {filterComp.map((company) => {
           return <CompanyItem key={company._id} company={company} addApp={addApp}/>
         })}
       </div>
