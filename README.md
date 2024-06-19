@@ -1,6 +1,6 @@
 # 🎓 TIET Placement Portal 🎓 
 Built with React.js, this platform facilitates seamless interaction between students and administrators, streamlining the placement process. Students can track their eligibility status, explore job opportunities, and more. Let's revolutionize the path to success together! 💼✨
-
+### Project Report : https://drive.google.com/file/d/10YKkBudXrdbNsQxPRgZHn1UrdgivXDxD/view?usp=sharing
 ### LIVE LINK : [https://tiet-placement-portal-se-project.vercel.app/]
 
 # Team Members :
