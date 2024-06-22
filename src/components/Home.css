@@ -1,0 +1,361 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
+body{
+    background-color: black;
+    margin-top: 1px;
+    font-family: 'Carter One', system-ui;
+}
+ 
+.navbar ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 45px;
+}
+.Loginbtn span button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.LoginButton{
+    border: none;
+    padding: 9px 20px;
+    font-size: 15px;
+    font-weight: 100;
+    font-family: 'Carter One', system-ui;
+    border-radius: 200px;
+    cursor: pointer;
+}
+.LoginButton:hover{
+    transform: scale(1.03);
+    transition: all 0.25s ease-in;
+}
+.navbar{
+    display: flex; 
+     justify-content: space-around; 
+     width: 100vw; 
+     background-color: #efe4c0; 
+     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
+     height: 70px;
+}
+.dropdown-menu{
+    width: 200px;
+}  */
+.logo{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    opacity: 100%;
+    transition: all ease-in 0.5s;
+}
+
+.LoginBox{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: -400px;
+    z-index: 10;
+    transition: left 0.75s ease-out;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+}
+.login-container {
+    background-color: transparent;
+    backdrop-filter: blur(25px);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    height: 100%;
+}
+.closelogin{
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    margin-left: 320px;
+}
+.login-container h1 {
+    color: white;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 24px;
+}
+
+.form-group button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.mainheading{
+    width: 50vw;
+    text-align: center;
+    font-size: 30px;
+    color: brown;
+    margin: auto;
+    margin-top: 20px;
+    padding: 15px;
+    background-color:  #efe4c0;
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.bgcolor{
+    background-color: rgb(47, 47, 47);
+}
+.mainheading,.maincontent {
+    opacity: 0;
+    animation: upcoming ease-in-out 1.5s forwards;
+  }
+  
+  @keyframes upcoming {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+/* rgba(48, 53, 60,1) */
+.maincontent{
+    width: 60vw;
+    font-size: 18px;
+    color: brown;
+    margin: auto;
+    margin-top: 200px;
+    text-align: center;
+    background-color: #efe4c0;
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+    padding: 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.maincontainer{
+    position: absolute;
+    right: 20vw;
+    transition: all 0.75s ease-out;
+}
+.firstsection{
+    height: 110vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image: url("https://www.thapar.edu/images/phocagallery/Thapar_Uni/1.jpg");
+    filter: brightness(90%);
+    filter: contrast(90%);
+    background-size: 100vw 110vh;
+    background-position: center;
+    position: relative;
+}
+.firstsection::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: calc(100% - 20px); /* Adjust for blur height */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+}  
+.seperation{
+    padding: 1px;
+    background-color: #fff;
+}
+.secondpage h1{
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+.secondsectioncontent{
+    padding: 25px;
+    width: 73vw;
+    height: 37vw;
+    background-color: #262626;
+    margin: auto;
+    border-radius: 150px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(40px); /* Optional: Start slightly offscreen */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transition for animation */
+}
+
+.companylogos{
+    margin: auto;
+    margin-top: 4vw;
+    padding: 0px 100px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card1{
+    display: flex;
+    width: 11vw;
+    height: 11vw;
+    border-radius: 2vw;
+    background-color: white;
+}
+.card1 img{
+    margin: auto;
+    width: 9vw;
+}
+.thirdpage h1{
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+.thirdsectioncontent{
+    padding: 25px;
+    width: 73vw;
+    height: 40vw;
+    background-color: #262626;
+    margin: auto;
+    border-radius: 150px;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(40px);/*Optional: Start slightly offscreen*/
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /*Transition for animation*/
+}
+.CampusCarousel{
+    margin: 3vw auto;
+    width: 55vw;
+}
+.CampusCarousel img{
+    border-radius: 100px;
+}
+.campuscarouselprev{
+    background-color: transparent;
+    border: none;
+}
+.campuscarouselprev:hover{
+    background-color: transparent;
+    border: none;
+}
+.campuscarouselnext{
+    background-color: transparent;
+    border: none;
+}
+.campuscarouselnext:hover{
+    background-color: transparent;
+    border: none;
+}
+
+.fourthpage h1{
+    text-align: center;
+    color: white;
+    font-size: 35px;
+}
+.fourthsectioncontent{
+    padding: 25px;
+    width: 73vw;
+    height: 37vw;
+    background-color: #262626;
+    margin: auto;
+    border-radius: 150px;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(40px);/*Optional: Start slightly offscreen*/
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /*Transition for animation*/
+}
+
+
+
+.footer{
+    margin:0px 20px;
+    margin-top: 50px;
+}
+.headings h1{
+    color: white;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+.address h4{
+    color: white;
+    font-size: 14px;
+}
+.headings{
+    display: flex;
+    justify-content: space-between;
+}
+.links{
+    display: grid;
+    grid-template-rows: 45px 45px;
+    grid-template-columns: 250px 250px;
+}
+.sociallinks{
+    display: flex;
+    gap: 15px;
+}
+.links a{
+    color: #BFFFC5;
+    font-size: 13px;
+}
+.sociallinks a:hover{
+    transform: scale(1.1);
+    transition: all ease-in 0.2s;
+}
+@media screen and (max-width: 1500px) {
+    .mainheading{
+        font-size: 30px;
+    }
+    .maincontent{
+        font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .mainheading{
+        font-size: 30px;
+    }
+    .maincontent{
+        font-size: 16px;
+    }
+  }
+/* 
+html {
+  scrollbar-face-color: #646464;
+  scrollbar-base-color: #646464;
+  scrollbar-3dlight-color: #646464;
+  scrollbar-highlight-color: #646464;
+  scrollbar-track-color: #000;
+  scrollbar-arrow-color: #000;
+  scrollbar-shadow-color: #646464;
+  scrollbar-dark-shadow-color: #646464;
+}
+
+::-webkit-scrollbar { width: 8px; height: 3px;}
+::-webkit-scrollbar-button {  background-color: #666; }
+::-webkit-scrollbar-track {  background-color: #646464;}
+::-webkit-scrollbar-track-piece { background-color: #000;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #646464;}
+::-webkit-resizer { background-color: #666;} */
