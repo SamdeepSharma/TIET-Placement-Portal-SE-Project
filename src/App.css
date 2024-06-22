@@ -36,3 +36,7 @@ body{
   height: 50px;
   width: 50px;
 }
+
+.extra-small-text {
+  font-size: 0.8rem; /* Adjust the size as needed */
+}

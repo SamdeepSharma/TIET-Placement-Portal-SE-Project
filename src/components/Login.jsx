@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { set, useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useState, useEffect } from "react";
+import CopyToClipboard from './CopyToClipboard';
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -82,6 +83,9 @@ const Login = () => {
   }
 }
 
+const adminUsername = 'samdeep51@gmail.com'
+const password = 'sam12345'
+const studentUsername = 'samdeep55@gmail.com'
 
 return (
   <div className="container">
@@ -143,14 +147,18 @@ return (
       <button onClick={()=>{setToggleDemo(!toggleDemo)}} className="mt-5 btn btn-outline-primary">{toggleDemo ? <span>Hide</span>:<span>Show</span>} demo accounts</button>
       <div className={`my-5  ${toggleDemo ? "" : "d-none"}`}>
         <h5 className="my-3">Since only colleges can register students in this placement portal, we have provided some demo accounts for you to test out our website.</h5>
-        Admin Demo Username: samdeep51@gmail.com
+        Admin Demo Username 
+        <CopyToClipboard text={adminUsername}/>
         <br /> 
-        Admin Demo Password: sam12345
+        Admin Demo Password 
+        <CopyToClipboard text={password}/>
         <br />
         <br />
-        Student Demo Username: samdeep55@gmail.com
+        Student Demo Username 
+        <CopyToClipboard text={studentUsername}/>
         <br />
-        Student Demo Password: sam12345
+        Student Demo Password 
+        <CopyToClipboard text={password}/>
       </div>
     </div>
   </div>
