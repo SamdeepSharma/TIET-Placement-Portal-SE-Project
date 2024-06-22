@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify';
-import { useForm } from 'react-hook-form';
+import { set, useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useState, useEffect } from "react";
 
@@ -22,6 +22,8 @@ const Login = () => {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const [toggleDemo, setToggleDemo] = useState(false)
 
   const onSubmit = async (data) => {
     try {
@@ -80,6 +82,7 @@ const Login = () => {
   }
 }
 
+
 return (
   <div className="container">
     <h2 className="my-4">Login to continue to TIET-PMS</h2>
@@ -135,6 +138,21 @@ return (
 
       <button type="submit" className="btn btn-primary">Submit</button>
     </form>
+
+    <div>
+      <button onClick={()=>{setToggleDemo(!toggleDemo)}} className="mt-5 btn btn-outline-primary">{toggleDemo ? <span>Hide</span>:<span>Show</span>} demo accounts</button>
+      <div className={`my-5  ${toggleDemo ? "" : "d-none"}`}>
+        <h5 className="my-3">Since only colleges can register students in this placement portal, we have provided some demo accounts for you to test out our website.</h5>
+        Admin Demo Username: samdeep51@gmail.com
+        <br /> 
+        Admin Demo Password: sam12345
+        <br />
+        <br />
+        Student Demo Username: samdeep55@gmail.com
+        <br />
+        Student Demo Password: sam12345
+      </div>
+    </div>
   </div>
 )
 }
