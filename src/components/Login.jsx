@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useNavigate } from "react-router-dom"
 import { toast } from 'react-toastify';
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useState, useEffect } from "react";
 import CopyToClipboard from './CopyToClipboard';
@@ -83,9 +83,9 @@ const Login = () => {
   }
 }
 
-const adminUsername = 'samdeep51@gmail.com'
-const password = 'sam12345'
-const studentUsername = 'samdeep55@gmail.com'
+const adminUsername = 'demo.admin_tiet@gmail.com'
+const password = 'tiet@2024'
+const studentUsername = 'demo.student_tiet@gmail.com'
 
 return (
   <div className="container">
