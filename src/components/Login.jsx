@@ -140,7 +140,7 @@ return (
         {errors.password && <div className="invalid-feedback">{errors.password.message}</div>}
       </div>
 
-      <button type="submit" className="btn btn-primary">Submit</button>
+      <button type="submit" className="btn btn-primary">Login</button>
     </form>
 
     <div>
