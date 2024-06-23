@@ -25,7 +25,7 @@ const Announcements = () => {
       <div className="d-flex justify-content-center">
       <h2 className="my-4">All Announcements</h2>
       </div>
-          {announcements.length === 0 && <h6 className="py-2">No announcements to display!</h6>}
+          {announcements.length === 0 && <h6 className="py-2 container">No announcements to display!</h6>}
       <div className="row g-1 overflow-auto m-2 d-flex justify-content-center" style={{maxHeight: '70vh', minHeight: '60vh'}}>
         { announcements.map((announcement) => {
           return <AnnouncementItem key={announcement._id} announcement={announcement} />

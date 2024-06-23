@@ -25,7 +25,7 @@ const Applications = () => {
       <div className="d-flex justify-content-center align-items-center">
       <h2 className="my-4">All Applications</h2>
       </div>
-          {applications.length === 0 && <h6 className="py-2">No applications applied!</h6>}
+          {applications.length === 0 && <h6 className="py-2 container">No applications applied!</h6>}
       <div className="row g-1 d-flex justify-content-center overflow-auto m-2" style={{maxHeight: '70vh', minHeight: '60vh'}}>
         { applications.map((application) => {
           return <ApplicationItem key={application.aid} application={application} />

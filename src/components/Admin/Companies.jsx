@@ -199,7 +199,7 @@ const Companies = () => {
       </button>
       <div className="d-flex justify-content-center align-items-center gap-3">
         <h2 className="my-4">All Companies</h2> <i className="fa-solid fa-circle-plus fa-2xl cursor-pointer" onClick={adddCompany}></i> </div>
-      {companies.length === 0 && <h6 className="py-2">No companies hiring right now! Visit again after some time.</h6>}
+      {companies.length === 0 && <h6 className="container py-2">No companies hiring right now! Visit again after some time.</h6>}
       <div className="row g-1 overflow-auto m-2 d-flex justify-content-center" style={{ maxHeight: '70vh', minHeight: '60vh' }}>
         {companies.map((company) => {
           return <CompanyItem key={company._id} delCompany={delCompany} company={company} />

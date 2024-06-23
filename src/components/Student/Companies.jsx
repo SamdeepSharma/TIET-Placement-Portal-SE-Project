@@ -74,7 +74,7 @@ const handleApp = () => {
       </button>
       <div className="gap-3">
         <h2 className="d-flex justify-content-center my-4">Eligible Companies</h2>
-      {companies.length === 0 && <h6 className="py-2">No companies hiring right now! Visit again after some time.</h6>}
+      {companies.length === 0 && <h6 className="py-2 container">No companies hiring right now! Visit again after some time.</h6>}
       <div className="row g-1 d-flex justify-content-center overflow-auto m-2" style={{maxHeight: '70vh', minHeight: '60vh'}}>
         {filterComp.map((company) => {
           return <CompanyItem key={company._id} company={company} addApp={addApp}/>
