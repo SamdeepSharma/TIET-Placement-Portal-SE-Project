@@ -22,7 +22,6 @@ const AnnouncementState = (props) => {
             },
         });
         const json = await response.json()
-        console.log(json)
         setAnnouncements(json)
     }
 
@@ -37,7 +36,6 @@ const AnnouncementState = (props) => {
             },
         });
         const stu = await response.json()
-        console.log(stu)
         setStudents(stu)
     }
 

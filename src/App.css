@@ -40,3 +40,9 @@ body{
 .extra-small-text {
   font-size: 0.8rem; /* Adjust the size as needed */
 }
+
+.avatar{
+  width: 2.5vw;
+  aspect-ratio: 1;
+  margin: 0px 10px;
+}

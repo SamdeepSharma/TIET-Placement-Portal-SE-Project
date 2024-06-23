@@ -82,7 +82,6 @@ const JobAppState = (props) => {
             },
         });
         const json = await response.json()
-        console.log(json)
         setCompanies(json)
     }
 
@@ -97,7 +96,6 @@ const JobAppState = (props) => {
             },
         });
         const stu = await response.json()
-        console.log(stu)
         setStudent(stu)
     }
 
@@ -112,9 +110,7 @@ const JobAppState = (props) => {
             },
             body: JSON.stringify({ type, companyName, requiredGPA, closingDate, batch }),
         });
-        console.log(type, companyName, closingDate, requiredGPA, batch)
         const company = await response.json()
-        console.log(company)
         //frontend logic
         setCompanies(companies.concat(company))
     }

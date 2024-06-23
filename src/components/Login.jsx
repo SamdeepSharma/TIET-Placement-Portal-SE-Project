@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import CopyToClipboard from './CopyToClipboard';
 
 const Login = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -142,7 +142,7 @@ const Login = () => {
               {errors.password && <div className="invalid-feedback">{errors.password.message}</div>}
             </div>
 
-            <button type="submit" className="btn btn-primary w-25 my-2">Login</button>
+            <button type="submit" className="btn btn-primary w-25 my-2" disabled={isSubmitting}>{isSubmitting? <span>Logging in</span>:<span>Login</span>}</button>
           </form>
           <div>
             <button onClick={() => { setToggleDemo(!toggleDemo) }} className="mt-4 btn btn-outline-primary">{toggleDemo ? <span>Hide</span> : <span>Show</span>} demo accounts</button>

@@ -37,37 +37,37 @@ const Navbar = () => {
               {
                 localStorage.getItem('token') && localStorage.getItem('user') === 'student' &&
                 <>
-                <li className="nav-item">
-                  <Link className={`nav-link ${location.pathname === "/student/companies" ? "active" : ""}`} aria-current="page" to="/student/companies">Job listings</Link>
-                </li>
-                
-                <li className="nav-item">
-                  <Link className={`nav-link ${location.pathname === "/student/announcements" ? "active" : ""}`} aria-current="page" to="/student/announcements">Announcements</Link>
-                </li>
-                
-                <li className="nav-item">
-                  <Link className={`nav-link ${location.pathname === "/student/applications" ? "active" : ""}`} aria-current="page" to="/student/applications">Applications</Link>
-                </li>
+                  <li className="nav-item">
+                    <Link className={`nav-link ${location.pathname === "/student/companies" ? "active" : ""}`} aria-current="page" to="/student/companies">Job listings</Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link className={`nav-link ${location.pathname === "/student/announcements" ? "active" : ""}`} aria-current="page" to="/student/announcements">Announcements</Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link className={`nav-link ${location.pathname === "/student/applications" ? "active" : ""}`} aria-current="page" to="/student/applications">Applications</Link>
+                  </li>
                 </>
               }
               {
                 localStorage.getItem('token') && localStorage.getItem('user') === 'admin' &&
                 <>
-                <li className="nav-item">
-                  <Link className={`nav-link ${location.pathname === "/admin/companies" ? "active" : ""}`} aria-current="page" to="/admin/companies">Companies</Link>
-                </li>
-                
-                <li className="nav-item">
-                  <Link className={`nav-link ${location.pathname === "/admin/students" ? "active" : ""}`} aria-current="page" to="/admin/students">Students</Link>
-                </li>
-                
-                <li className="nav-item">
-                  <Link className={`nav-link ${location.pathname === "/admin/announcements" ? "active" : ""}`} aria-current="page" to="/admin/announcements">Announcements</Link>
-                </li>
-                
-                <li className="nav-item">
-                  <Link className={`nav-link ${location.pathname === "/admin/applications" ? "active" : ""}`} aria-current="page" to="/admin/applications">Applications</Link>
-                </li>
+                  <li className="nav-item">
+                    <Link className={`nav-link ${location.pathname === "/admin/companies" ? "active" : ""}`} aria-current="page" to="/admin/companies">Companies</Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link className={`nav-link ${location.pathname === "/admin/students" ? "active" : ""}`} aria-current="page" to="/admin/students">Students</Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link className={`nav-link ${location.pathname === "/admin/announcements" ? "active" : ""}`} aria-current="page" to="/admin/announcements">Announcements</Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link className={`nav-link ${location.pathname === "/admin/applications" ? "active" : ""}`} aria-current="page" to="/admin/applications">Applications</Link>
+                  </li>
                 </>
 
               }
@@ -85,10 +85,13 @@ const Navbar = () => {
               (!localStorage.getItem('token')) ?
                 <div className="d-flex" role="search">
                   <Link type="button" className="btn btn-primary mx-2" to="/login">Login</Link>
-                </div> : <button className="btn btn-primary mx-2" onClick={handleLogout}>Logout</button>
+                </div> : <>
+                  <button className="btn btn-primary mx-2" onClick={handleLogout}>Logout</button>
+                  <Link to="/profile" className=""><img src="avatar.gif" className="avatar" alt="profile" /></Link>
+                  </>
             }
+                </div>
           </div>
-        </div>
       </nav>
     </div>
   )

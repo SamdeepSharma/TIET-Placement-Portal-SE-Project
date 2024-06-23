@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { useForm } from 'react-hook-form';
 
 const Contact = () => {
-    const { register, handleSubmit, reset, isSubmitting, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm();
 
     const host = 'https://tiet-pms-backend.vercel.app';
 
@@ -20,7 +20,6 @@ const Contact = () => {
                 throw new Error('Network response was not ok');
             }
             const json = await response.json()
-            console.log(json)
             if (json) {
                 //save the auth-token to local storage and redirect to home
                 toast.success('🎉 Form Submitted!', {
